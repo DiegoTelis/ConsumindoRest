@@ -1,0 +1,31 @@
+﻿@model Todo
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+    <br/>
+    <br/>
+    <br/>
+<form>
+  <div class="form-group">
+    <label >ID</label>
+    <input type="text" class="form-control" asp-for="id" >
+  </div>
+  <div class="form-group">
+    <label >User ID</label>
+    <input type="text" class="form-control" asp-for="userId" placeholder="User ID">
+  </div>
+    <div class="form-group">
+    <label >Título</label>
+    <input type="text" class="form-control" asp-for="title" placeholder="Título">
+  </div>
+  <div class="form-check">
+    <input type="checkbox" class="form-check-input" asp-for="completed" >
+    <label class="form-check-label" >Completado</label>
+  </div>
+  <button type="submit" class="btn btn-secondary btn-lg btn-block" asp-controller="Home" asp-action="Index">Voltar</button>
+</form>
+
+
