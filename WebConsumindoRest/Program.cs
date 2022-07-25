@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+using WebConsumindoRest.Data;
 using WebConsumindoRest.Interface;
 using WebConsumindoRest.Repositorio;
 
@@ -5,7 +7,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddSingleton<ITodo, TodoRepositorio>();
+builder.Services.AddDbContext<BancoContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddScoped<ITodo, TodoRepositorio>();
+
 
 var app = builder.Build();
 

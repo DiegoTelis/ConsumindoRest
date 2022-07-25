@@ -1,6 +1,6 @@
 ﻿namespace WebConsumindoRest.Models
 {
-    public class Todo
+    public class TodoModel
     {
         public int id { get; set; }
         public int userId { get; set; }

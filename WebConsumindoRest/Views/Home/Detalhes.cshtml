@@ -1,4 +1,4 @@
-﻿@model Todo
+﻿@model TodoModel
 @*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
@@ -8,7 +8,7 @@
     <br/>
     <br/>
     <br/>
-<form>
+<form asp-controller="Home" asp-action="Alterar" method="post">
   <div class="form-group">
     <label >ID</label>
     <input type="text" class="form-control" asp-for="id" >
@@ -25,7 +25,14 @@
     <input type="checkbox" class="form-check-input" asp-for="completed" >
     <label class="form-check-label" >Completado</label>
   </div>
+  <button type="submit" class="btn btn-primary btn-lg btn-block" asp-controller="Home" asp-action="Alterar">Editar</button>
   <button type="submit" class="btn btn-secondary btn-lg btn-block" asp-controller="Home" asp-action="Index">Voltar</button>
+  <br/><br/>
+  <div class="row">
+  <div class="col align-self-end">
+      <button type="submit" class="btn btn-danger btn-lg" asp-controller="Home" asp-action="Apagar" asp-route-id="@Model.id" >Excluir</button>
+  </div>
+  </div>
 </form>
 
 
